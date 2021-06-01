@@ -21,10 +21,27 @@ const output = document.querySelector('#output')
         output.appendChild(body)
         }
 
-        document.getElementById("submit").addEventListener("click", event => {
+        document.getElementById("#button")('submit', event =>  {
             event.preventDefault()
-            getNotes()
+            console.log(ouput)
         })
+        
+        document.addEventListener("click", event => {
+            event.preventDefault()
+            createOutput()
+        })
+
+        function createNotes(text) {
+            fetch(input), {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify ({
+                    title: input,
+                    body: input,
+                })
+            }
+        }
+
     }
 
 
